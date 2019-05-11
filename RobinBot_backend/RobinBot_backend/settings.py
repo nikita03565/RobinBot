@@ -71,8 +71,14 @@ TEMPLATES = [
 ]
 
 ASGI_APPLICATION = 'RobinBot_backend.routing.application'
-
-
+CHANNEL_LAYERS = {
+    'default': {
+        'BACKEND': 'channels_redis.core.RedisChannelLayer',
+        'CONFIG': {
+            "hosts": [('localhost', 6379)],
+        },
+    },
+}
 #WSGI_APPLICATION = 'RobinBot_backend.wsgi.application'
 
 
