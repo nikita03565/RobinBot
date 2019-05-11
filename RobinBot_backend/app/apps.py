@@ -4,6 +4,21 @@ import socket
 import threading
 from . import views
 import os
+from asgiref.sync import async_to_sync
+from channels.layers import get_channel_layer
+
+
+channel_layer = get_channel_layer()
+
+
+def process_message(data):
+    async_to_sync(channel_layer.group_send)(
+        "data",
+        {
+            'type': 'chat_message',
+            "text": data,
+        },
+    )
 
 
 def tcp_server(ip, port):
@@ -20,8 +35,10 @@ def tcp_server(ip, port):
         while True:
             data = conn.recv(1024)
             if not data:
+                print("no data")
                 break
-            views.process_message(data.decode())
+
+            process_message(data.decode())
 
         conn.close()
 
