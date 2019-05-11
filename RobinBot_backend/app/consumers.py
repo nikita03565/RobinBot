@@ -9,13 +9,14 @@ class DataConsumer(WebsocketConsumer):
     def disconnect(self, close_code):
         pass
 
-    def receive(self, json_data=None, bytes_data=None):
+    def receive(self, text_data=None, bytes_data=None):
         try:
-            data = json.loads(json_data)
-            print(data)
+            print(text_data)
+            data = json.loads(text_data)
+
             self.send(json.dumps(
                 {
-                    'text': '200_ok'
+                    'text': '2020_ok'
                 }
             ))
         except Exception:

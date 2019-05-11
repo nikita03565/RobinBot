@@ -1,8 +1,9 @@
-from channels.routing import URLRouter
+from channels.routing import ProtocolTypeRouter
+
 from django.conf.urls import url
-from .consumers import DataConsumer
 
-URLRouter([
-    url(r"^dataChannel/$", DataConsumer),
+from . import consumers
 
-])
+websocket_urlpatterns = [
+    url('dataChannel/', consumers.DataConsumer),
+]

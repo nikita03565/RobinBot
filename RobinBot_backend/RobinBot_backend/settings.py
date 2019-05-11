@@ -25,7 +25,7 @@ SECRET_KEY = 'ea)z8tvy9%8*c$mxw%t32r3bdextp8wl3_y%9^sb^ffahml+fp'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -70,7 +70,10 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'RobinBot_backend.wsgi.application'
+ASGI_APPLICATION = 'RobinBot_backend.routing.application'
+
+
+#WSGI_APPLICATION = 'RobinBot_backend.wsgi.application'
 
 
 # Database
@@ -122,4 +125,3 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-ASGI_APPLICATION = 'RobinBot_backend.routing.application'
