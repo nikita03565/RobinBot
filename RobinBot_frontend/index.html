@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link href="https://fonts.googleapis.com/css?family=Raleway:700,900|Roboto:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="tabs.js"></script>
+    <script src="briefcase.js"></script>
+
+    <title>Robin bot</title>
+</head>
+<body>
+    <header>
+        <h1 class="page-head-text">Robin Bot</h1>
+    </header>
+
+    <main>
+        <img class="main-logo" src="bot.svg" alt="Robin Bot">
+        <p class="main-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat libero id magnam soluta aspernatur, repudiandae recusandae, adipisci doloribus minus eum architecto, vitae voluptates nesciunt error exercitationem harum maxime possimus? Quaerat?Minus molestiae dolores velit dignissimos corporis! Nihil molestias, tempora perspiciatis vero, pariatur ea nisi temporibus aspernatur numquam at libero vel commodi, placeat suscipit maiores ipsa assumenda sunt. Obcaecati, voluptatum ab.</p>
+
+        <section class="tabs">
+            <div class="tab-headers">
+                <div id="briefcase" class="tab-header" data-text="Briefcase 💼" data-icon="💼" data-active="true">Briefcase 💼</div>
+                <div id="cross" class="tab-header" data-text="📈 Cross-Corellation" data-icon="📈">📈</div>
+            </div>
+
+            <div class="tab-content briefcase-container" data-for="briefcase">
+                <div class="briefcase-currency-buttons">
+                    <h2 class="timer">Time until update: <b>0:24</b></h2>
+                    <button class="btn-currency-sum" data-currency="Summary">₿0.25234</button>
+                    <button class="btn-currency" data-active="true" data-currency="Bitcoin">Bitcoin — ₿0.15234</button>
+                    <button class="btn-currency" data-currency="USD">USD — $322.50</button>
+                    <button class="btn-currency" data-currency="RUR">RUR — ₽300.0</button>
+                    <button class="btn-currency" data-currency="UAH">UAH — ₴20.567</button>
+                    <button class="btn-currency" data-currency="EUR">EUR — €1024.024</button>
+                </div>
+                
+                <div class="currency-chart" id="currency-chart"></div>
+            </div>
+
+            <div class="tab-content" data-for="cross">
+                cross content
+            </div>
+        </section>
+    </main>
+</body>
+</html>
