@@ -12,13 +12,10 @@
 </body>
 <script>
 
-    var chatSocket = new WebSocket(
-        'ws://' + window.location.host +
-        '/dataChannel/');
-    alert('ws://' + window.location.host +
-        '/dataChannel/')
+    var chatSocket = new WebSocket('ws://' + window.location.host + '/dataChannel/');
+    //alert('ws://' + window.location.host + '/dataChannel/')
     chatSocket.onmessage = function(e) {
-        alert("here")
+        //alert("here")
         var data = JSON.parse(e.data);
         var message = data['text'];
         document.querySelector('#chat-log').value += (message + '\n');
